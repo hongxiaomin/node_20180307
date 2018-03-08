@@ -31,4 +31,5 @@ toush 1.txt 创建一个名字叫1.txt的文件
 git add 1.txt添加暂存区
 git commit -m 'add 1.txt'把1.txt添加历史区
 git log查看历史记录
+git reset --hard `提交版本号` 重置提交代码
 ```
