@@ -33,3 +33,16 @@ git commit -m 'add 1.txt'把1.txt添加历史区
 git log查看历史记录
 git reset --hard `提交版本号` 重置提交代码
 ```
+# 拉取远程仓库的代码
+``` 
+git clone https://github.com/hongxiaomin/ant-design-mobile.git
+cd ant-design-mobile
+git remote add teacher https://github.com/GuoYongfeng/ant-design-mobile.git
+git pull teacher master
+git add -A
+git commit -m"提交说明"
+git push origin master
+
+如何查看当前本地仓库关联的远程仓库
+git remote -v
+```

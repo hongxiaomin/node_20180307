@@ -1,0 +1,23 @@
+{
+  "name": "node_20180307",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongxiaomin/node_20180307.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongxiaomin/node_20180307/issues"
+  },
+  "homepage": "https://github.com/hongxiaomin/node_20180307#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
