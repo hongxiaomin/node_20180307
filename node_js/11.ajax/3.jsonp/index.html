@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<button id="btn" onclick="search()">查询</button>
+<ul id="lists"></ul>
+</body>
+</html>
+<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    function search(){
+        var qsData = {
+            'wd':$('#search').val(),
+            'cb':'getData',
+        };
+        $.ajax({
+            async:false,
+            url:'http://suggestion.baidu.com/su',
+            type:"GET",
+            dataType:'jsonp',
+            jsonp:'jsoncallback',
+            data:qsData,
+            timeout:5000
+        })
+    }
+
+    function getData(data){
+        console.log(data);
+        var lists=data.s;
+        $('#lists').empty();
+        lists.forEach(function(item){
+            console.log(item);
+            var li = $('<li>');
+            li.html(item);
+            $('#lists').append(li);
+        })
+    }
+
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2 id="title"></h2>
+</body>
+</html>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','http://localhost:9090/ajax',true);
+    xhr.onreadystatechange=function(){
+        console.log(xhr.responseText);
+        document.getElementById('title').innerHTML=xhr.responseText;
+    };
+    xhr.send('hello');
+</script>

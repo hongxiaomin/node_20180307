@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <h2>哈哈哈哈</h2>
+    </header>
+    <button onclick="query()">查询</button>
+<ul id="content"></ul>
+</body>
+</html>
+<script>
+//    var xhr = new XMLHttpRequest();
+//    xhr.open('GET','http://localhost:9090/ajax',true);
+//    xhr.onreadystatechange=function(){
+//        if(xhr.readyState===4){
+//            console.log(xhr.responseText);
+//        }
+//    };
+//    xhr.send();
+
+    function load(data){
+        console.log(data);
+        var str='';
+        data.forEach(function(item){
+            str+='<li>'+item.name+'</li>';
+        });
+        document.getElementById('content').innerHTML=str;
+        var script = document.getElementsByTagName('script');
+        document.body.removeChild(script[script.length-1]);
+    }
+
+    function query(){
+        var script = document.createElement('script');
+        script.src="http://localhost:9090/ajax";
+        document.body.appendChild(script);
+    }
+</script>

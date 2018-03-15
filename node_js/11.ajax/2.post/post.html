@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <div>
+        <label>Username</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label>password</label>
+        <input type="password" name="password">
+    </div>
+    <button id="btn">提交</button>
+</form>
+
+</body>
+</html>
+<script>
+    function ajax(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','/post',true);
+        xhr.setRequestHeader('content-type','application/json');
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState===4){
+                console.log(xhr.responseText);
+                console.log(xhr.getResponseHeader('Content-Type'));
+                console.log(xhr.getAllResponseHeaders());
+            }
+        };
+        var username = document.getElementsByName("username")[0].value;
+        var password=document.getElementsByName("password")[0].value;
+        xhr.send(JSON.stringify({"username":username,"password":password}))
+    }
+   var btn = document.getElementById('btn');
+    console.log(btn);
+    btn.onclick=function(event){
+        event.preventDefault();
+        console.log(123);
+        ajax();
+        return false;
+    }
+
+</script>
