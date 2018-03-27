@@ -3,7 +3,7 @@ const http = require('http');//表示加载http模块
 //response参数也是一个对象，表示服务器端的HTTP回应
 function handle(request,response) {
     //writeHead 表示服务器端回应一个HTTP头信息
-    response.writeHead(200,{'COntent-Type':'text/html;charset=utf-8'});
+    response.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});
     //response.end方法表示，服务器端回应的具体内容，以及回应完成后关闭本次会话
     response.end(new Date().toLocaleString());
 }

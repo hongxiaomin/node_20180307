@@ -26,5 +26,21 @@ var time = new Date(new Date().getTime()+60*1000).toGMTString();
 缺点：使用response.writeHead只能发送一次头部，即只能调用一次，且不能与response.render共存，否则会报错。
 还可以使用response.setHeader,代码示例如下：
 ``` 
-response.setHeader('Set-cookie':'name=hxm; path=/; Expires='+time);
+response.setHeader('Set-cookie':['name1=hxm1; path=/1; Expires='+time,'name2=hxm2; path=/2; Expires='+time]);
 ```
+### express 中使用cookie
+express在4.x版本之后，管理session和cookie等许多模块都不再直接包含在express中，而是需要单独下载安装相应模块
+``` 
+cookieParser安装
+npm install cookie-parser
+```
+用法：
+``` 
+const express = require('express');
+```
+### cookie使用注意事项
+- 可能被客户端篡改，使用前验证合法性
+- 不要存储敏感数据，比如用户密码，账户余额
+- 使用httpOnly保证安全
+- 尽量减少cookie的体积
+- 设置正确的domain和path，减少数据传输
